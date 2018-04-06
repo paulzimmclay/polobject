@@ -158,3 +158,44 @@ const elizabethSangerInfo = Object.create({
     enumerable: true
   }
 })
+
+// Challenge
+
+const changeInfo = (objectPart, newThing) => {
+  elizabethSangerInfo[objectPart] = newThing;
+}
+
+changeInfo("voterRegistration", "no dates for you");
+console.log(elizabethSangerInfo.voterRegistration)
+
+const changeDonation = (a, b) => {
+  elizabethSangerInfo[a] = b
+}
+
+changeDonation("calendar", "dates for days");
+console.log(elizabethSangerInfo.calendar)
+
+// Use document.createElement() to build an 
+// <article> element representing Elizabeth. The 
+// id property of the element should be her congressional 
+// district, and its content should be her platform data. 
+// Once the element has been created, insert it into the DOM.
+
+// Assign new article element to variable, newEl
+let newEl = document.createElement("article");
+// Assign ID of TN-5 to newEl
+newEl.setAttribute("id", "TN-5");
+// Get element ID of target element
+const platform = document.getElementById("platform");
+// Loop to get contents of platform object
+for (property in elizabethSangerPlatform.platformStatements.value) {
+  // Get text of properties
+  let objectValue = () => {
+    return elizabethSangerPlatform.platformStatements.property
+  }
+  let returnValue = objectValue()
+  let newText = document.createTextNode(returnValue)
+  newEl.appendChild(newText)
+  platform.appendChild(newEl)
+}
+
