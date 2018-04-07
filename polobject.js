@@ -1,3 +1,4 @@
+// Politician profile object
 const elizabethSangerProfile = Object.create({
   name: {
     value: "Elizabeth Sanger",
@@ -33,6 +34,7 @@ const elizabethSangerProfile = Object.create({
   }
 })
 
+// Platform object
 const elizabethSangerPlatform = Object.create({
   missionStatement: {
     value: "Mission statement goes here.",
@@ -68,6 +70,7 @@ const elizabethSangerPlatform = Object.create({
   }
 })
 
+// Volunteers Object
 const elizabethSangerVolunteers = Object.create({
   profiles: [
     {
@@ -141,6 +144,7 @@ const elizabethSangerVolunteers = Object.create({
   ]
 })
 
+// Info object
 const elizabethSangerInfo = Object.create({
   calendar: {
     value: "URL to calendar",
@@ -161,6 +165,7 @@ const elizabethSangerInfo = Object.create({
 
 // Challenge
 
+// Function to assign 
 const changeInfo = (objectPart, newThing) => {
   elizabethSangerInfo[objectPart] = newThing;
 }
@@ -190,11 +195,9 @@ const platform = document.getElementById("platform");
 // Loop to get contents of platform object
 for (property in elizabethSangerPlatform.platformStatements.value) {
   // Get text of properties
-  let objectValue = () => {
-    return elizabethSangerPlatform.platformStatements.property
-  }
+  
   let returnValue = objectValue()
-  let newText = document.createTextNode(returnValue)
+  let newText = document.createTextNode("tester")
   newEl.appendChild(newText)
   platform.appendChild(newEl)
 }
